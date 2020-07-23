@@ -9,7 +9,7 @@ class Cards
         global $faces;
         $suits = [♠, ♥, ♣, ♦]; // масти карт
         $deck = [];
-        // создадим массив карт (колоду) конткатенацией мастей с достоинствами карт
+        // создадим массив карт (колоду) соединением мастей и достоинств карт
         foreach ($suits as $suit) {
             foreach ($faces as $face) {
                 $deck[] = ['dost' => $face, 'mast' => $suit];
