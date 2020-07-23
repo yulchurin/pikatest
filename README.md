@@ -7,13 +7,13 @@ https://pikabu.ru/page/interview/backend/06-2020/cards-game-fool.php
 <b>Не пройден!!!</b>
 в репозитории представлена логика игры
 
-Конструкция
-echo (new GameFool())
-(new Player('Rick'))
-(new Player('Morty'))
-(new Player('Summer'))
-(new CardsDeck(rand(1, 0xffff)))
-();
+Конструкция <br>
+echo (new GameFool())<br>
+(new Player('Rick'))<br>
+(new Player('Morty'))<br>
+(new Player('Summer'))<br>
+(new CardsDeck(rand(1, 0xffff)))<br>
+();<br>
 не понятная и не явная по мнению участников phpc chat
 объявление объектов было сделано иначе, но логика игры сохранена
 
