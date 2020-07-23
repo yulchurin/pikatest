@@ -1,19 +1,21 @@
 # pikatest
-pikabu.ru test project
+*pikabu.ru test project*
 
-Задание:
-https://pikabu.ru/page/interview/backend/06-2020/cards-game-fool.php
+[*Задание*](https://pikabu.ru/page/interview/backend/06-2020/cards-game-fool.php)
 
-<b>Не пройден!!!</b>
+**Не пройден!!!**
+
 в репозитории представлена логика игры
 
-Конструкция <br>
-echo (new GameFool())<br>
-(new Player('Rick'))<br>
-(new Player('Morty'))<br>
-(new Player('Summer'))<br>
-(new CardsDeck(rand(1, 0xffff)))<br>
-();<br>
+Конструкция
+```
+echo (new GameFool())
+(new Player('Rick'))
+(new Player('Morty'))
+(new Player('Summer'))
+(new CardsDeck(rand(1, 0xffff)))
+();
+```
 не понятная и не явная по мнению участников phpc chat
 объявление объектов было сделано иначе, но логика игры сохранена
 
