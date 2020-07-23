@@ -13,7 +13,7 @@ $dost = [
 class Player
 {
     public static $counter;
-    public $name;
+    private $name;
     public $cards = [];
     public $trumps = [];
     public $skipStep;
