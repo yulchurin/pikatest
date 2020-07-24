@@ -3,6 +3,8 @@
 
 [*Задание*](https://pikabu.ru/page/interview/backend/06-2020/cards-game-fool.php)
 
+[*Пример работы скрипта*](https://yulchurin.com/pikabu/)
+
 **Не пройден!!!**
 
 в репозитории представлена логика игры
