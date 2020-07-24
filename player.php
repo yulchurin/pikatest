@@ -13,7 +13,7 @@ $dost = [
 class Player
 {
     public static $counter;
-    private $name;
+    public $name;
     public $cards = [];
     public $trumps = [];
     public $skipStep;
@@ -104,7 +104,7 @@ class Player
 
     private function mergeWithTrumps()
     {
-        if (count($this->trumps) !== 0) {
+        if (isset($this->trumps) && count($this->trumps) !== 0) {
             $this->cards = array_merge($this->cards, $this->trumps);
         }
         unset($this->trumps);
@@ -180,7 +180,7 @@ class Player
         $iHaveCardsForYou = 0;
         $facesInGame = [];
         // создаем массив с достоинствами карт в игре (на доске)
-        if (count($_SESSION['gameBoard']) !== 0) {
+        if (isset($_SESSION['gameBoard']) && count($_SESSION['gameBoard']) !== 0) {
             foreach ($_SESSION['gameBoard'] as $card) {
                 $facesInGame[] = $card['dost'];
             }
@@ -248,16 +248,8 @@ class Player
             }
             //пробуем отбиться козырными
             if ($repeled !== 1) {
-                if (count($this->trumps) !== 0) {
-                    $_SESSION['gameBoard'][] = $this->trumps[0];
-                    echo '<pre>', $GLOBALS['dost'][$this->trumps[0]['dost']], $this->trumps[0]['mast'], ' <-- ', $this->name, '</pre>';
-                    unset($this->trumps[0]);
-                    if (count($this->trumps) !== 0) {
-                        $this->trumps = array_values($this->trumps);
-                    }
-                    $repeled = 1;
-                } else {
-                    if (count($this->cards) !== 0) {
+                if (!isset($this->trumps) || count($this->trumps) === 0) {
+                    if (isset($this->trumps) && count($this->cards) !== 0) {
                         // поднимает все карты
                         $this->cards = array_merge($this->cards, $_SESSION['gameBoard']);
                         $this->skipStep = 1;
@@ -270,6 +262,14 @@ class Player
                     } else {
                         Game::$stopAction = 1;
                     }
+                } else {
+                    $_SESSION['gameBoard'][] = $this->trumps[0];
+                    echo '<pre>', $GLOBALS['dost'][$this->trumps[0]['dost']], $this->trumps[0]['mast'], ' <-- ', $this->name, '</pre>';
+                    unset($this->trumps[0]);
+                    if (count($this->trumps) !== 0) {
+                        $this->trumps = array_values($this->trumps);
+                    }
+                    $repeled = 1;
                 }
             }
         }
