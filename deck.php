@@ -7,7 +7,7 @@ class Cards
     public function __construct(int $rand)
     {
         global $faces;
-        $suits = [♠, ♥, ♣, ♦]; // масти карт
+        $suits = ['♠', '♥', '♣', '♦']; // масти карт
         $deck = [];
         // создадим массив карт (колоду) соединением мастей и достоинств карт
         foreach ($suits as $suit) {
