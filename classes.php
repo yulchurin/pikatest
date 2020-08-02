@@ -22,7 +22,7 @@ class Game
         $this->sortAllPlayersCards();
         $this->showPlayers();
         while ($this->stopGame !== 1) {
-            unset($this->status);
+            //unset($this->status);
             foreach ($this->players as $key => $player) {
                 if (count($player->cards) === 0) {
                     unset($this->players[$key]);
