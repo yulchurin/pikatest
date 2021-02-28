@@ -1,6 +1,6 @@
 <?php
-include 'deck.php';
-include 'player.php';
+include 'Deck.php';
+include 'Player.php';
 
 class Game
 {
@@ -151,12 +151,3 @@ class Game
         }
     }
 }
-/**
- * вместо var_dump
- * @param $arg
- */
-//function d ($arg) {
-//    echo '<pre>';
-//    print_r($arg);
-//    echo '</pre>';
-//}
