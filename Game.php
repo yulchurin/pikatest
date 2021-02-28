@@ -1,6 +1,4 @@
 <?php
-include 'Deck.php';
-include 'Player.php';
 
 class Game
 {
